@@ -2476,3 +2476,27 @@ width: 99%;
 display:none;
 }
 }
+  .row {
+    display: flex;
+    justify-content: flex-end; /* Aligns the whole row to the right */
+  }
+
+  .right-align {
+    text-align: left; /* Ensures content inside is left-aligned */
+    width: 600px; /* Optional: Set a max-width for better control */
+  }
+
+    .container_contact {
+            display: flex;
+            flex-direction: column; /* 垂直排列子元素 */
+            align-items: center; /* 水平居中对齐 */
+        }
+
+
+        .joinImgIocn img {
+            margin: 0 5px; /* 图片之间的间距 */
+        }
+  .left-align {
+    text-align: left; /* Ensures content inside is left-aligned */
+    width: 1200px; /* Optional: Set a max-width for better control */
+  }
