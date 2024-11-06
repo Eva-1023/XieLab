@@ -25,7 +25,7 @@
     var style = document.documentElement.style,
         prefixed;
 
-    // test standard property first
+    // test.html standard property first
     if ( typeof style[propName] === 'string' ) {
       return propName;
     }
@@ -33,7 +33,7 @@
     // capitalize
     propName = capitalize( propName );
 
-    // test vendor specific properties
+    // test.html vendor specific properties
     for ( var i=0, len = prefixes.length; i < len; i++ ) {
       prefixed = prefixes[i] + propName;
       if ( typeof style[ prefixed ] === 'string' ) {
@@ -101,7 +101,7 @@
     // if there's a previous Modernzir, check if there are necessary tests
     for ( testName in tests) {
       if ( !Modernizr.hasOwnProperty( testName ) ) {
-        // if test hasn't been run, use addTest to run it
+        // if test.html hasn't been run, use addTest to run it
         Modernizr.addTest( testName, tests[ testName ] );
       }
     }
