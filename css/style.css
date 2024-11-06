@@ -302,6 +302,17 @@ h6 {
     margin: 0 0 60px 0;
 }
 
+.custom-heading-year {
+    font-size: 30px;
+    color: #FFD700;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+
+
 p {
     line-height: 24px;
     margin: 0;
@@ -609,9 +620,10 @@ div#main-nav {
 /* Services
 ---------------------------------*/
 
-#service {
+#resources {
     padding: 60px 0px;
-    background: url('../img/slide4.jpg') top left no-repeat !important;
+    /*background: url('../img/slide4.jpg') top left no-repeat !important;*/
+    background-color: black;
 }
 #service h2{
   color: #fff;
@@ -2045,35 +2057,7 @@ div.mc-image {
 /*-------------------
 -----News Styles-----
 ---------------------*/    
-.timeline{
-    position:relative;
-    margin-bottom:100px;
-    z-index:1;
-}
 
-.timeline:before{
-    display:block;
-    content:"";
-    position:absolute;
-    width:50%;
-    height:100%;
-    left:1px;
-    top:0;
-    border-right:1px solid #F74D4D;
-    z-index:-1;
-} 
-
-.timeline:after{
-    display:block;
-    content:"";
-    position:absolute;
-    width:50%;
-    height:100px;
-    left:1px;
-    bottom:-105px;
-    border-right:1px dashed #F74D4D;
-    z-index:-1;
-} 
 
 .timeline .date-title{
     text-align:center;
@@ -2480,6 +2464,10 @@ display:none;
     display: flex;
     justify-content: flex-end; /* Aligns the whole row to the right */
   }
+.row_left {
+    display: flex;
+    justify-content: flex-start; /* Aligns the whole row to the right */
+  }
 
   .right-align {
     text-align: left; /* Ensures content inside is left-aligned */
@@ -2500,3 +2488,84 @@ display:none;
     text-align: left; /* Ensures content inside is left-aligned */
     width: 1200px; /* Optional: Set a max-width for better control */
   }
+
+/* Publication styles */
+.publication_container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+        }
+.publication_timeline {
+    flex: 1;
+    padding-right: 20px;
+    border-right: 2px solid #ddd;
+}
+.timeline div {
+    width: 120px; /* Fixed width */
+    height: 50px; /* Fixed height */
+    margin-bottom: 10px;
+    color: #FFD700; /* Gold color for text */
+    background-color: #000; /* Black background */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.year-button {
+    width: 120px;
+    height: 50px;
+    margin-bottom: 10px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+.year-button:hover {
+    background-color: #f0f0f0;
+}
+.year-button.active {
+    background-color: #FFD700;
+    color: #000;
+}
+.pub_content {
+    flex: 3;
+    padding-left: 20px;
+}
+.year {
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: none;
+}
+.publication {
+    margin-bottom: 30px; /* 增加间隔 */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.publication a {
+    color: black;
+    text-decoration: none; /* 去除链接默认下划线 */
+}
+
+.publication a:hover {
+    text-decoration: underline; /* 悬停时添加下划线 */
+}
+
+.publication p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
