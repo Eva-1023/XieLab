@@ -1,9 +1,3 @@
-/*
-Author URI: http://webthemez.com/
-Note: 
-Licence under Creative Commons Attribution 3.0 
--------------------------------------------------------*/
-
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/css?family=Raleway:800,700,400);
 @import url(http://fonts.googleapis.com/css?family=Signika:400,600);
@@ -612,11 +606,88 @@ div#main-nav {
 .navbar-nav>li {
   float: initial !important;
 }
+/* Research
+---------------------------------*/
+#research {
+    padding: 60px 0px;
+    /*background: url('../img/slide4.jpg') top left no-repeat !important;*/
+    background-color: white;
+}
 
+/* Members
+---------------------------------*/
+#members {
+    padding: 60px 0px;
+    /*background: url('../img/slide4.jpg') top left no-repeat !important;*/
+    background-color: black;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
 
+.section-title{
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.pi-section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
 
+.pi-profile {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 900px;
+    height: 350px;
+}
 
+.pi-photo {
+    border-radius: 5px;
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.pi-info {
+    max-width: 600px;
+}
+
+.pi-name {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.experience-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.experience-list li {
+    margin-bottom: 5px;
+}
+
+.student-profile {
+    text-align: center;
+    width: 150px;
+}
+
+.student-name {
+    margin-top: 10px;
+}
 /* Services
 ---------------------------------*/
 
@@ -780,11 +851,9 @@ a.contact_btn:hover {
 }
 
 
-/* Portfolio
----------------------------------*/
+/* News---------------------------------*/
 
-
-#Portfolio {
+#news {
     padding: 60px 0px;
 }
 
@@ -1480,8 +1549,8 @@ transition: all .3s;
 
 	
 /* Portfolio */	
-	
-.container.portfolio_title {
+
+.container.news_title {
     padding-bottom: 0px;
 }
 
