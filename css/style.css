@@ -679,14 +679,43 @@ div#main-nav {
 .experience-list li {
     margin-bottom: 5px;
 }
-
-.student-profile {
-    text-align: center;
-    width: 150px;
+.pi-email {
+    text-align: left;
+    margin-top: 45px;
+    padding: 0;
+    line-height: 1;
 }
+.pi-email h4, .pi-email p {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.6 !important;
 
+}
+.student-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    height: 350px;
+}
 .student-name {
-    margin-top: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+.student-name h4 {
+    color: black;
+}
+.student-name h4, .student-name p {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.6 !important;
+
 }
 /* Services
 ---------------------------------*/
@@ -1072,39 +1101,8 @@ background-position-y: 70px;
 	font-size:14px;
 	padding-left:0px;
 }
-.about-us p{
-	/*font-size: 0.9375em;*/
-	line-height: 1.625em;
-	padding: 15px 0;
-}
-.about-us .about-us-list{
-	list-style: none;
-	margin-bottom: 20px;
-	padding-left:0px;
-	padding: 25px 25px 15px;
-	background-color: #EDEDED;
-}
 
-.about-us .points{
-	position: relative;
-	list-style-type: none;
-	padding: 5px 0 5px 30px;
-	color: #010100;
-}
 
-.about-us .points:before{
-	content: "\f058";
-	position: absolute;
-	font-family: FontAwesome;
-	font-size: 1.125em;
-	color: #F74D4D;
-	left: 0px;
-	top: 3px;
-}
-
-.about-us-link a:first-child{
-	margin-left: 0;
-}
 
 
 /* Team
@@ -2638,3 +2636,22 @@ display:none;
     font-size: 16px;
     line-height: 1.6;
 }
+/* Contact styles */
+.contact_text h4{
+    text-align: center;color: #FFD700; font-size: 1.8em; margin-bottom: 30px;
+}
+.contact_text p{
+    text-align: justify;text-indent: 2em;
+    color: #aaa; font-size: 1.3em; line-height: 1.6;
+}
+.address{
+    padding-top: 30px;
+    text-align: center;
+}
+
+/* Research */
+.research_content{
+    display: flex;
+
+}
+
