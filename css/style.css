@@ -43,14 +43,17 @@ a, a:hover, a:active {
 }
 
 /*carousel*/
+/*设置轮播图切换动画的属性为透明度*/
 .carousel-fade .carousel-inner .item {
   transition-property: opacity;
 }
+/*默认状态下，所有幻灯片（包括即将离开的或进入的）都是完全透明的*/
 .carousel-fade .carousel-inner .item,
 .carousel-fade .carousel-inner .active.left,
 .carousel-fade .carousel-inner .active.right {
   opacity: 0;
 }
+/*当前的激活幻灯片（active）和即将切换至的下一张（next.left 或 prev.right）都是完全可见的。*/
 .carousel-fade .carousel-inner .active,
 .carousel-fade .carousel-inner .next.left,
 .carousel-fade .carousel-inner .prev.right {
@@ -69,24 +72,24 @@ a, a:hover, a:active {
 .carousel,
 .carousel-inner,
 .carousel-inner .item {
-  height: 100%;
+  height: 400px;
 }
 .item:nth-child(1) {
   background: darkred;
 }
 .item:nth-child(2) {
-  background: red;
+  background: darkred;
 }
 .item:nth-child(3) {
-  background: orange;
+  background: darkred;
 }
 .caption {
 position: absolute;
-  
+
 top: 64%;
   right: 0;
-  padding: 25px; 
-  padding-left: 25px; 
+  padding: 25px;
+  padding-left: 25px;
   left: 0;
 }
 .carousel-fade .carousel-control {
@@ -94,12 +97,12 @@ top: 64%;
   font-size: 90px;
   top: 38%;
 }
-.carousel-indicators li { 
+.carousel-indicators li {
   background-color: rgba(0,0,0,0);
   border: 1px solid #FEE16F;
   border-radius: 0;
 }
-.carousel-indicators .active { 
+.carousel-indicators .active {
   background-color: #FEE16F;
 }
 .caption h2{
@@ -107,10 +110,15 @@ color:#FFE270;
 line-height:45px;
 font-size: 50px;
 }
-.caption strong { 
+.caption strong {
   font-size: 26px;
 }
-
+/* img-fluid 样式：图片宽度全屏，保持高度比例 */
+.img-fluid {
+  max-width: 100%; /* 确保图片宽度不会超过父元素 */
+  height: auto; /* 高度根据宽度自动调整，保持比例 */
+  display: block; /* 避免图片默认的内联样式（如间距） */
+}
 /* Common style */
 .grid figure {
 	position: relative;
