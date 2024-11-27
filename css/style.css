@@ -681,7 +681,7 @@ div#main-nav {
 }
 .pi-email {
     text-align: left;
-    margin-top: 45px;
+    margin-top: 40px;
     padding: 0;
     line-height: 1;
 }
@@ -2649,66 +2649,89 @@ display:none;
     text-align: center;
 }
 
-/* Research */
+
+
+/* RESEARCH*/
 .research_content {
-    display: flex;
-    width: 1200px;
-    margin-top: 0 !important; /* 上外边距50px */
-    margin-bottom: 50px; /* 下外边距50px */
-    margin-left: auto; /* 左外边距自动 */
-    margin-right: auto; /* 右外边距自动 */
-    padding: 10px;
-    background-color: #ffffff; /* 确保背景为白色 */
-    height: 500px;
-    box-sizing: border-box; /* 包含内边距在宽高内 */
-    align-items: center; /* 垂直方向居中对齐 */
-}
-.image-container {
-    flex: 0 0 500px; /* 固定宽度300px，并不允许缩放 */
-    margin-right: 30px; /* 右侧外边距 */
-    height:340px;
+  display: flex;
+  flex-direction: row; /* 图片和文字内容左右排列 */
+  justify-content: center; /* 水平方向居中 */
+  align-items: center; /* 垂直方向居中 */
+  width: 1200px;
+  margin: 0 auto 50px; /* 水平居中，底部外边距50px */
+  padding: 20px;
+  background-color: #ffffff; /* 背景白色 */
+  box-sizing: border-box; /* 包括内边距在宽高内 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  border-radius: 10px; /* 圆角边框 */
 }
 
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持图片比例并覆盖容器 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 添加浅色阴影以提升视觉效果 */
-    border-radius: 10px; /* 圆角边框 */
-}
-/* 文字内容 */
-.text-content {
-    flex: 1; /* 剩余空间全部分配给文字内容 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* 垂直居中 */
-    align-items: baseline;
-}
+    /* 图片容器 */
+    .image-container {
+      flex: 0 0 500px; /* 图片固定宽度 */
+      display: flex; /* 启用 Flexbox */
+      justify-content: center; /* 水平方向居中 */
+      align-items: center; /* 垂直方向居中 */
+      margin-right: 30px; /* 图片和文字之间的间距 */
+    }
 
-.text-content h3 {
-    margin: 0 0 10px 0;
-    font-size: 24px;
-    text-align: center;
-    background-color: #FFFFE0; /* 添加背景色 */
-    padding: 10px; /* 增加内边距 */
-    border-radius: 15px; /* 添加圆角 */
-    color: #333; /* 修改文本颜色 */
-}
+    .image-container img {
+      width: 100%; /* 图片宽度占满容器 */
+      height: auto; /* 高度自适应 */
+      object-fit: cover; /* 保持图片比例 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 添加阴影效果 */
+      border-radius: 10px; /* 圆角边框 */
+    }
 
-.text-content p {
-    margin: 0;
-    font-size: 16px;
-    color: #666666;
-    line-height: 1.5;
-    text-align: justify; /* 两端对齐 */
-    text-justify: inter-word; /* 调整单词间的对齐方式 */
-    hyphens: auto; /* 自动断字，提升对齐效果 */
-    text-indent: 2em; /* 首行缩进两个字符 */
-    letter-spacing: 0.5px; /* 字母间距，提升可读性 */
-    /* 可选：增加段落的内外边距 */
-    padding: 5px 0; /* 上下内边距5px */
-    /* 可选：添加背景色或边框以增强视觉效果 */
-    /* background-color: #f9f9f9; */
-    /* border-left: 4px solid #FFA07A; */
-}
+    /* 文字内容容器 */
+    .text-content {
+      display: flex;
+      flex-direction: column; /* 标题和段落垂直排列 */
+      justify-content: center; /* 确保文字内容整体垂直居中 */
+      flex: 1; /* 占用剩余空间 */
+    }
 
+    /* 标题样式 */
+    .text-header {
+      font-size: 24px;
+      text-align: center;
+      background-color: #FFFFE0; /* 浅黄色背景 */
+      padding: 10px; /* 标题内边距 */
+      border-radius: 15px; /* 圆角边框 */
+      color: #333; /* 文本颜色 */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+      margin-bottom: 20px; /* 标题与段落之间的间距 */
+    }
+
+    /* 段落样式 */
+    .text-content p {
+      margin: 0;
+      font-size: 16px;
+      color: #666666;
+      line-height: 1.5; /* 行间距 */
+      text-align: justify; /* 两端对齐 */
+      text-indent: 2em; /* 首行缩进 */
+      hyphens: auto; /* 自动断字 */
+      letter-spacing: 0.5px; /* 字母间距 */
+      padding: 5px 0; /* 段落上下内边距 */
+    }
+
+    /* 响应式调整 */
+    @media screen and (max-width: 768px) {
+      .research_content {
+        flex-direction: column; /* 小屏幕下改为垂直排列 */
+        align-items: center; /* 居中对齐 */
+        width: 100%; /* 宽度自适应 */
+        padding: 15px;
+      }
+
+      .image-container {
+        width: 100%; /* 图片容器宽度自适应 */
+        margin-bottom: 20px; /* 图片与文字的间距 */
+      }
+
+      .text-header {
+        font-size: 24px; /* 调整标题字体大小 */
+        padding: 10px; /* 减少内边距 */
+      }
+    }
