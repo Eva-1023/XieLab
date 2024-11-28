@@ -706,7 +706,7 @@ div#main-nav {
 }
 .student-profile {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     background-color: #f9f9f9;
     padding: 20px;
@@ -2757,12 +2757,11 @@ display:none;
 .research-tag1{
     display: inline-block;
     width: auto;
-    background-color: rgb(161, 204, 214);
+    background-color: rgb(179, 222, 239);
     border-radius: 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px 20px; /* 增加内边距，让文字与背景保持距离 */
+    padding: 20px 20px 40px 40px; /* 增加内边距，让文字与背景保持距离 */
     white-space: nowrap; /* 防止文字换行 */
-
 }
 .research-tag2{
     display: inline-block;
