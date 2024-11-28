@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 520.4 520.4">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f3cc29;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-6, .cls-7, .cls-9 {
+        stroke-width: .5px;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-7 {
+        stroke: #231f20;
+      }
+
+      .cls-2 {
+        fill: #dd2d2b;
+      }
+
+      .cls-3 {
+        fill: #73859f;
+        opacity: .05;
+        stroke-width: .4px;
+      }
+
+      .cls-3, .cls-5 {
+        stroke: #595a5c;
+      }
+
+      .cls-4 {
+        fill: #1e9e4f;
+      }
+
+      .cls-5, .cls-8 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: #8f1f51;
+      }
+
+      .cls-6, .cls-9 {
+        stroke: #010101;
+      }
+
+      .cls-10 {
+        fill: #dfdede;
+        opacity: .8;
+      }
+
+      .cls-7 {
+        fill: #3974b0;
+      }
+
+      .cls-11 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-11, .cls-12, .cls-13, .cls-14 {
+        opacity: .3;
+      }
+
+      .cls-12 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-13 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-14 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-8 {
+        stroke: #1a1a1a;
+      }
+
+      .cls-9 {
+        fill: #c7dff3;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="369.44" y1="303.79" x2="369.44" y2="470.09" gradientTransform="translate(0 515.31) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00a79d"/>
+      <stop offset=".19" stop-color="#00a597"/>
+      <stop offset=".42" stop-color="#00a288"/>
+      <stop offset=".67" stop-color="#009d6e"/>
+      <stop offset=".95" stop-color="#00954b"/>
+      <stop offset="1" stop-color="#009444"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-57.7" y1="303.79" x2="-57.7" y2="470.09" gradientTransform="translate(93.26 515.31) rotate(-180)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="369.44" y1="-287.41" x2="369.44" y2="-121.1" gradientTransform="translate(0 596.29)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="-57.7" y1="-287.41" x2="-57.7" y2="-121.1" gradientTransform="translate(93.26 596.29) rotate(-180) scale(1 -1)" xlink:href="#linear-gradient"/>
+  </defs>
+  <rect class="cls-3" x=".2" y=".2" width="520" height="520"/>
+  <g>
+    <g>
+      <rect class="cls-10" x="144.17" y="211.68" width="232.06" height="97.2"/>
+      <line class="cls-5" x1="163.87" y1="257.98" x2="163.74" y2="308.88"/>
+      <line class="cls-5" x1="202.71" y1="248.64" x2="202.6" y2="308.88"/>
+      <line class="cls-5" x1="279.57" y1="266.77" x2="279.46" y2="308.88"/>
+      <line class="cls-5" x1="318.11" y1="243.24" x2="318" y2="308.88"/>
+      <line class="cls-5" x1="356.75" y1="283.43" x2="356.64" y2="308.88"/>
+      <line class="cls-5" x1="240.86" y1="243.24" x2="240.73" y2="308.88"/>
+      <circle class="cls-1" cx="163.87" cy="228.95" r="5.23"/>
+      <rect class="cls-6" x="313.69" y="224.64" width="8.62" height="8.62" transform="translate(-68.75 291.92) rotate(-45)"/>
+      <path class="cls-2" d="M279.57,224.05l5.23,9.8h-10.45s5.23-9.8,5.23-9.8Z"/>
+      <circle class="cls-4" cx="202.71" cy="228.95" r="5.23"/>
+      <rect class="cls-7" x="235.63" y="223.72" width="10.45" height="10.45"/>
+      <rect class="cls-9" x="352.44" y="224.64" width="8.62" height="8.62" transform="translate(-57.4 319.32) rotate(-45)"/>
+      <rect class="cls-8" x="144.17" y="211.68" width="232.06" height="97.2"/>
+    </g>
+    <g>
+      <polygon class="cls-14" points="227.7 211.52 348.31 211.52 511.18 45.22 348.55 45.22 227.7 211.52"/>
+      <polygon class="cls-11" points="292.7 211.52 172.09 211.52 9.22 45.22 171.85 45.22 292.7 211.52"/>
+    </g>
+    <g>
+      <polygon class="cls-12" points="227.7 308.88 348.31 308.88 511.18 475.18 348.55 475.18 227.7 308.88"/>
+      <polygon class="cls-13" points="292.7 308.88 172.09 308.88 9.22 475.18 171.85 475.18 292.7 308.88"/>
+    </g>
+  </g>
+</svg>

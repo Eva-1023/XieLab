@@ -72,16 +72,19 @@ a, a:hover, a:active {
 .carousel,
 .carousel-inner,
 .carousel-inner .item {
-  height: 400px;
+
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 700px;
 }
 .item:nth-child(1) {
-  background: darkred;
+  background: white;
 }
 .item:nth-child(2) {
-  background: darkred;
+  background: white;
 }
 .item:nth-child(3) {
-  background: darkred;
+  background: white;
 }
 .caption {
 position: absolute;
@@ -115,6 +118,7 @@ font-size: 50px;
 }
 /* img-fluid 样式：图片宽度全屏，保持高度比例 */
 .img-fluid {
+
   max-width: 100%; /* 确保图片宽度不会超过父元素 */
   height: auto; /* 高度根据宽度自动调整，保持比例 */
   display: block; /* 避免图片默认的内联样式（如间距） */
@@ -311,6 +315,7 @@ h6 {
     font-weight: 400;
     text-align: center;
     margin: 0 0 0 0;
+    padding: 10px;
 }
 
 
@@ -2565,6 +2570,11 @@ display:none;
   }
 
 /* Publication styles */
+#publications {
+    padding: 60px 0;
+    /*background: url('../img/slide4.jpg') top left no-repeat !important;*/
+
+}
 .publication_container {
             display: flex;
             max-width: 1200px;
@@ -2576,7 +2586,7 @@ display:none;
     border-right: 2px solid #ddd;
 }
 .timeline div {
-    width: 120px; /* Fixed width */
+    width: 200px; /* Fixed width */
     height: 50px; /* Fixed height */
     margin-bottom: 10px;
     color: #FFD700; /* Gold color for text */
@@ -2743,3 +2753,34 @@ display:none;
         padding: 10px; /* 减少内边距 */
       }
     }
+
+.research-tag1{
+    display: inline-block;
+    width: auto;
+    background-color: rgb(161, 204, 214);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px; /* 增加内边距，让文字与背景保持距离 */
+    white-space: nowrap; /* 防止文字换行 */
+
+}
+.research-tag2{
+    display: inline-block;
+    width: auto;
+    background-color: rgba(130, 68, 166, 0.2);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px; /* 增加内边距，让文字与背景保持距离 */
+    white-space: nowrap; /* 防止文字换行 */
+
+}
+.research-tag3{
+    display: inline-block;
+    width: auto;
+    background-color: rgba(75, 166, 68, 0.2);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px; /* 增加内边距，让文字与背景保持距离 */
+    white-space: nowrap; /* 防止文字换行 */
+
+}
