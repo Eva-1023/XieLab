@@ -1,23 +1,27 @@
+/*响应式设计*/
 @charset "utf-8";
-@import url(http://fonts.googleapis.com/css?family=Raleway:800,700,400);
-@import url(http://fonts.googleapis.com/css?family=Signika:400,600);
+@import url(https://fonts.googleapis.com/css?family=Raleway:800,700,400);
+@import url(https://fonts.googleapis.com/css?family=Signika:400,600);
 
 /* Reset
 ---------------------------------*/
 ul {
-    list-style: none;
+   list-style: none;
+   padding: 0;
+   margin: 0;
 }
 
 .figure {
-    margin: 0px;
+    margin: 0;
 }
 
 img {
     max-width: 100%;
+    /*height: auto;*/
 }
 
 a, a:hover, a:active {
-    outline: 0px !important;
+    outline: none;
 	text-decoration:none;
 }
 .clear {
@@ -41,8 +45,60 @@ a, a:hover, a:active {
 .clearfix:after {
     clear: both;
 }
+.grid figure {
+  position: relative;
+  flex: 1 1 100%; /* 默认占满宽度 */
+  max-width: 480px;
+  margin: 10px;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+/* 响应式网格布局 */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+@media (max-width: 576px) {
+  .grid figure {
+    flex: 1 1 100%; /* 手机屏幕占满一行 */
+    max-width: 100%;
+    margin: 5px 0; /* 减少间距 */
+  }
+}
+@media (min-width: 768px) {
+  .grid figure {
+    flex: 1 1 calc(50% - 20px); /* 平板设备两列 */
+  }
+}
 
+@media (min-width: 1200px) {
+  .grid figure {
+    flex: 1 1 calc(33.33% - 20px); /* 大屏幕三列 */
+  }
+}
 /*carousel*/
+/* 响应式轮播图 */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .carousel {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel {
+    height: 700px;
+  }
+}
 /*设置轮播图切换动画的属性为透明度*/
 .carousel-fade .carousel-inner .item {
   transition-property: opacity;
@@ -276,13 +332,54 @@ figure.effect-oscar:hover img {
 
 /* Styles
 ---------------------------------*/
+/* 响应式表格 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  table tr {
+    margin-bottom: 15px;
+  }
+
+  table td {
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: calc(50% - 20px);
+    text-align: left;
+    font-weight: bold;
+  }
+}
 body {
+    width:100%;
+    min-height: 100vh; /* 占满屏幕的高度 */
     background: #fff;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: normal;
     color: #888888;
     margin: 0;
+     padding: 0;
+  box-sizing: border-box;
+   overflow-x: hidden; /* 防止横向滚动 */
 }
 
 h2 {
@@ -366,11 +463,39 @@ p {
 }
 
 .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #000;
     border: 0px solid #fff;
     min-height: 40px;
     margin-bottom: 0px;
 }
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.navbar ul li {
+  margin: 0 10px;
+}
+
+.navbar ul li a {
+  color: #f7f7f7;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ed5441;
+}
 .navbar-inverse .navbar-nav > li > a {
     color: #F7F7F7;
 }
@@ -639,11 +764,46 @@ div#main-nav {
     background-color: black;
 }
 .container {
-    max-width: 1200px;
+    width: 100%;
     margin: auto;
-    padding: 20px;
+    padding: 10px; /* 默认内边距适应小屏幕 */
+    box-sizing: border-box;
 }
 
+@media (min-width: 576px) { /* 小屏幕及以上 */
+    .container {
+        max-width: 540px;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 768px) { /* 中等屏幕及以上 */
+    .container {
+        max-width: 720px;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 992px) { /* 大屏幕及以上 */
+    .container {
+        max-width: 960px;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1200px) { /* 超大屏幕 */
+    .container {
+        max-width: 1140px;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1400px) { /* 超宽屏幕 */
+    .container {
+        max-width: 1320px;
+        padding: 20px;
+    }
+}
 .section-title{
     text-align: center;
     margin-bottom: 20px;
