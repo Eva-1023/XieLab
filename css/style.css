@@ -28,9 +28,6 @@ img, table, video, iframe {
     height: auto; /* 保持高度自适应 */
     display: block; /* 避免内联元素带来的多余间距 */
 }
-* {
-    outline: 1px solid red; /* 为每个元素添加红色边框，方便检查 */
-}
 @media (min-width: 576px) { /* 小屏幕及以上 */
     .container {
         max-width: 540px;
