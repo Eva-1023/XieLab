@@ -54,6 +54,33 @@ img, table, video, iframe {
     }
 }
 
+.section-title{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.section-title h2 {
+    color: #222222;
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    letter-spacing: -1px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.section-title span {
+    display: block;
+    color: #888888;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 5px;
+    text-align: center;
+}
+.row {
+    display: flex;
+    justify-content: flex-end; /* Aligns the whole row to the right */
+  }
+
+
 /* 导航栏样式   */
 .navbar {
       display: flex;
@@ -238,7 +265,7 @@ img, table, video, iframe {
 }
 /* 标题样式 */
 .text-header {
-  font-size: 24px;
+  font-size:2rem;
   text-align: center;
   background-color: #FFFFE0; /* 浅黄色背景 */
   padding: 10px; /* 标题内边距 */
@@ -250,7 +277,7 @@ img, table, video, iframe {
 /* 段落样式 */
 .text-content p {
   margin: 0;
-  font-size: 16px;
+  font-size: 1.5rem;
   color: #666666;
   line-height: 1.5; /* 行间距 */
   text-align: justify; /* 两端对齐 */
@@ -341,13 +368,12 @@ margin-bottom: 15px; /* 增加段落间距 */
     box-sizing: border-box;
 }
 #resources {
-    padding: 60px 0px;
+    padding: 60px 10px;
     /*background: url('../img/slide4.jpg') top left no-repeat !important;*/
     background-color: black;
 }
 #service h2{
   color: #fff;
-
 }
 .service_wrapper {
     padding: 40px 0 40px;
@@ -410,7 +436,7 @@ color:#fff;
 }
 @media (max-width: 768px) {
     .col-md-3 {
-        flex: 0 0 50%; /* 占满一行 */
+        flex: 0 0 50%;
         max-width: 50%; /* 确保不会超出屏幕宽度 */
     }
 
@@ -420,7 +446,7 @@ color:#fff;
     }
 
     .service_block h3 {
-        font-size: 18px; /* 缩小标题字体 */
+        font-size: 16px; /* 缩小标题字体 */
     }
 
     .service_block p {
@@ -436,6 +462,304 @@ color:#fff;
 }
 /* Resource
 ---------------------------------*/
+
+
+/* Publications
+---------------------------------*/
+/* Publications 主区域 */
+
+#publications {
+  padding: 60px 10px;
+}
+/* 父容器样式：水平排列 */
+.publication_container {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-wrap: nowrap; /* 强制水平排列 */
+  max-width: 100%;
+  margin: auto;
+}
+/* 时间线样式 */
+.publication_timeline {
+  flex: 0.75; /* 时间线占用比例 */
+  padding-right: 20px;
+  border-right: 0 solid #ddd; /* 添加右边框 */
+}
+/* 时间线中的年份按钮样式 */
+.timeline div {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  color: #FFD700; /* 金色文字 */
+  background-color: #000; /* 黑色背景 */
+  border-radius: 10px; /* 圆角 */
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.year-button {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.year-button:hover {
+  background-color: #f0f0f0;
+}
+.year-button.active {
+  background-color: #FFD700;
+  color: #000;
+}
+/* 内容区域样式 */
+.pub_content {
+  flex: 3.25; /* 内容区域占用比例 */
+  padding-left: 15px;
+}
+/* 每年的内容样式 */
+.year {
+font-size: 1em;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: none; /* 默认隐藏 */
+}
+.publication {
+  margin-bottom: 15px; /* 增加间隔 */
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding:  5px;
+}
+.publication p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.6;
+}
+.publication a {
+  color: black;
+  text-decoration: none; /* 去掉下划线 */
+}
+.publication a:hover {
+  text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
+.custom-heading-year {
+  font-size: 2em;
+  color: #FFD700;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+/* 响应式设计：小屏幕 */
+@media (max-width: 768px) {
+  .publication_container {
+    flex-wrap: wrap; /* 时间线和内容换行 */
+  }
+
+  .publication_timeline {
+    flex: 1; /* 时间线占用比例减少 */
+    padding-right: 10px; /* 减少右边距 */
+    border-right: 1px solid #ddd; /* 边框变窄 */
+  }
+
+  .pub_content {
+    flex: 2; /* 内容区域占用更多比例 */
+    padding-left: 10px; /* 减少左边距 */
+  }
+}
+/* 更小屏幕下：时间线和内容上下堆叠 */
+@media (max-width: 576px) {
+  .publication_container {
+    flex-direction: column; /* 时间线和内容上下堆叠 */
+  }
+
+  .publication_timeline {
+    flex: 1; /* 时间线全宽 */
+    padding-right: 0;
+    border-right: none; /* 去掉右边框 */
+    margin-bottom: 20px; /* 增加与内容区域的间距 */
+    text-align: center; /* 时间线居中 */
+  }
+
+  .timeline div {
+    font-size: 12px; /* 缩小时间线文字大小 */
+    height: 40px; /* 调整高度 */
+  }
+
+  .year-button {
+    font-size: 12px; /* 缩小按钮文字 */
+    height: 40px;
+    max-width: 100%; /* 保证宽度自适应 */
+  }
+
+  .pub_content {
+    flex: 1;
+    padding-left: 0; /* 去掉左边距 */
+  }
+
+  .publication p {
+    font-size: 12px; /* 缩小段落文字 */
+    line-height: 1.2;
+  }
+
+  .custom-heading-year {
+    font-size: 15px; /* 缩小标题文字 */
+    padding: 5px;
+  }
+}
+/* Publications
+---------------------------------*/
+
+
+/* Contact
+---------------------------------*/
+#contact {
+  padding: 60px 10px;
+   background: #000000;
+}
+#contact .section-title h2,
+#contact .section-title h6 {
+    color: white; /* 设置字体颜色 */
+}
+
+
+
+
+
+
+.contact_block {
+    text-align: center;
+}
+
+.contact_block_icon {
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+    margin: 0px auto 20px;
+}
+
+.contact_block_icon.icon2 {
+    border-color: #ED5441;
+}
+
+.contact_block_icon.icon3 {
+    border-color: #49b5e7;
+}
+
+.contact_block_icon span {
+    background: none repeat scroll 0 0 #f56eab;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.contact_block_icon.icon2 {
+    border-color: #ED5441;
+}
+
+.contact_block_icon.icon2 span {
+    background: #ED5441;
+}
+
+.contact_block_icon.icon3 {
+    border-color: #49b5e7;
+}
+
+.contact_block_icon.icon3 span {
+    background: #49b5e7;
+}
+
+.contact_block_icon i {
+    color: #fff;
+    font-size: 36px;
+    margin-top: 0;
+    position: relative;
+    top: 26px;
+    z-index: 20;
+}
+
+.contact_block span {
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 20px;
+}
+
+.contact_block span a {
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 20px;
+}
+
+.contact_info {
+    font-size: 15px;
+    margin: 0 0 0 20px;
+    padding-left: 0;
+}
+
+.contact_info  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 30px;
+    color: #fff;
+}
+
+.contact_info p {
+    line-height: 28px;
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 30px;
+}
+
+.contact_text h4{
+    text-align: center;color: #FFD700; font-size: 1.8em; margin-bottom: 30px;
+}
+.contact_text p{
+    text-align: justify;text-indent: 2em;
+    color: #aaa; font-size: 1.3em; line-height: 1.6;
+}
+.address{
+    padding-top: 30px;
+    text-align: center;
+}
+.address h4{
+    color: #fff; font-size: 2rem; margin-bottom: 10px;
+}
+.address p{
+   color: #aaa; font-size: 1.5rem; line-height: 1.5;
+}
+.address a{
+   color: #ADD8E6; text-decoration: none;
+}
+
+/* Contact
+---------------------------------*/
+
+
+
+
+
+
+
+
 
 
 
@@ -835,15 +1159,7 @@ h6 {
     margin: 0 0 60px 0;
 }
 
-.custom-heading-year {
-    font-size: 30px;
-    color: #FFD700;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    text-align: center;
-    margin: 0 0 0 0;
-    padding: 10px;
-}
+
 
 
 
@@ -1082,10 +1398,7 @@ div#main-nav {
     background-color: black;
 }
 
-.section-title{
-    text-align: center;
-    margin-bottom: 20px;
-}
+
 
 .pi-section{
     display: flex;
@@ -1445,7 +1758,7 @@ img {
     margin-bottom: 40px;
 }
 
-/* About Us
+/* Members
 --------------------------- */
  
 .aboutUs-container {
@@ -1455,7 +1768,7 @@ background-size: auto 100%;
 background-position-y: 70px;
 }
 #about-us, h2, h3, h6, p {
-/* color: #0A1525; */
+ color: #0A1525;
 }
 #about-us .read-more{
 	border: 1px solid #ED5441;
@@ -1632,110 +1945,6 @@ transition: all .3s;
     background: #fff;
 }
 
-/* Contact
----------------------------------*/
-.page_section.contact {
-    padding: 90px 0 100px;
-}
- 
-.contact_section {
-    margin: 0 0 60px 0;
-}
-
-.contact_section h2 {
-    font-size: 40px;
-    color: #ffffff;
-    margin: 0 0 50px 0;
-    text-transform: uppercase;
-}
-
-.contact_block {
-    text-align: center;
-}
-
-.contact_block_icon {
-    border-radius: 50%;
-    height: 85px;
-    width: 85px;
-    margin: 0px auto 20px;
-}
-
-.contact_block_icon.icon2 {
-    border-color: #ED5441;
-}
-
-.contact_block_icon.icon3 {
-    border-color: #49b5e7;
-}
-
-.contact_block_icon span {
-    background: none repeat scroll 0 0 #f56eab;
-    border: 5px solid #fff;
-    border-radius: 50%;
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-.contact_block_icon.icon2 {
-    border-color: #ED5441;
-}
-
-.contact_block_icon.icon2 span {
-    background: #ED5441;
-}
-
-.contact_block_icon.icon3 {
-    border-color: #49b5e7;
-}
-
-.contact_block_icon.icon3 span {
-    background: #49b5e7;
-}
-
-.contact_block_icon i {
-    color: #fff;
-    font-size: 36px;
-    margin-top: 0;
-    position: relative;
-    top: 26px;
-    z-index: 20;
-}
-
-.contact_block span {
-    display: block;
-    font-size: 16px;
-    color: #ffffff;
-    line-height: 20px;
-}
-
-.contact_block span a {
-    display: block;
-    font-size: 16px;
-    color: #ffffff;
-    line-height: 20px;
-}
-
-.contact_info {
-    font-size: 15px;
-    margin: 0 0 0 20px;
-    padding-left: 0;
-}
-
-.contact_info  h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 0 0 30px;
-    color: #fff;
-}
-
-.contact_info p {
-    line-height: 28px;
-    display: block;
-    font-size: 16px;
-    color: #ffffff;
-    margin: 0 0 30px;
-}
 
 .social_links {
     padding:0;
@@ -1840,9 +2049,6 @@ transition: all .3s;
 /* Footer
 ---------------------------------*/
 
-.footer_wrapper {
-    background: #000000;
-}
 
 .footer_bottom {
     border-top: 1px solid #3C3A3A;
@@ -1983,25 +2189,7 @@ transition: all .3s;
     border: #000000 solid 1px;
 }
 
-.section-title h2 {
-    color: #222222;
-    font-family: 'Raleway', sans-serif;
-    font-size: 34px;
-    letter-spacing: -1px;
-    margin: 0 0 15px;
-    text-align: center;
-    text-transform: uppercase;
-}
 
-.section-title span {
-    display: block;
-    color: #888888;
-    font-family: 'Open Sans',sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0 0 60px;
-    text-align: center;
-}
 #techSkills{
 padding:80px 0 60px;
 }
@@ -2789,10 +2977,7 @@ width: 99%;
 display:none;
 }
 }
-.row {
-    display: flex;
-    justify-content: flex-end; /* Aligns the whole row to the right */
-  }
+
 .row_left {
     display: flex;
   flex-wrap: wrap; /* 允许子元素换行 */
@@ -2820,103 +3005,7 @@ display:none;
     width: 1200px; /* Optional: Set a max-width for better control */
   }
 
-/* Publication styles */
-#publications {
-    padding: 60px 0;
-    /*background: url('../img/slide4.jpg') top left no-repeat !important;*/
 
-}
-.publication_container {
-            display: flex;
-            max-width: 1200px;
-            margin: auto;
-        }
-.publication_timeline {
-    flex: 1;
-    padding-right: 20px;
-    border-right: 2px solid #ddd;
-}
-.timeline div {
-    width: 200px; /* Fixed width */
-    height: 50px; /* Fixed height */
-    margin-bottom: 10px;
-    color: #FFD700; /* Gold color for text */
-    background-color: #000; /* Black background */
-    border-radius: 10px; /* Rounded corners */
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.year-button {
-    width: 120px;
-    height: 50px;
-    margin-bottom: 10px;
-    color: #000;
-    background-color: #fff;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-.year-button:hover {
-    background-color: #f0f0f0;
-}
-.year-button.active {
-    background-color: #FFD700;
-    color: #000;
-}
-.pub_content {
-    flex: 3;
-    padding-left: 20px;
-}
-.year {
-    background-color: black;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    display: none;
-}
-.publication {
-    margin-bottom: 30px; /* 增加间隔 */
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.publication a {
-    color: black;
-    text-decoration: none; /* 去除链接默认下划线 */
-}
-
-.publication a:hover {
-    text-decoration: underline; /* 悬停时添加下划线 */
-}
-
-.publication p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.6;
-}
-/* Contact styles */
-.contact_text h4{
-    text-align: center;color: #FFD700; font-size: 1.8em; margin-bottom: 30px;
-}
-.contact_text p{
-    text-align: justify;text-indent: 2em;
-    color: #aaa; font-size: 1.3em; line-height: 1.6;
-}
-.address{
-    padding-top: 30px;
-    text-align: center;
-}
 
 
 
