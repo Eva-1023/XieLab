@@ -1622,20 +1622,6 @@ div#main-nav {
 /* Latest Work
 ---------------------------------*/
 
-
-#work_outer {
-    background: #f9f9f9;
-    padding: 70px 0px;
-    position: relative;
-}
-
-.work_pic {
-    position: absolute;
-    right: 0;
-    top: 25%;
-    width: 50%;
-}
-
 .inner_section {
     padding: 0px;
 }
