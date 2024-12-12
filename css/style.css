@@ -82,6 +82,127 @@ img, table, video, iframe {
   }
 
 
+/* HOME
+---------------------------------*/
+/* 响应式轮播图 */
+.carousel {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 100vh; /* 高度设置为视口高度 */
+  overflow: hidden; /* 隐藏多余部分 */
+  position: relative;
+}
+/* 轮播图的图片容器 */
+.carousel-inner {
+  width: 100%; /* 宽度占满父容器 */
+  height: 100%; /* 高度占满父容器 */
+}
+/* 单个幻灯片的样式 */
+.carousel-inner .item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (min-width: 768px) {
+  .carousel {
+    height:auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel {
+    height:auto;
+  }
+}
+/*设置轮播图切换动画的属性为透明度*/
+.carousel-fade .carousel-inner .item {
+  transition-property: opacity;
+}
+/*默认状态下，所有幻灯片（包括即将离开的或进入的）都是完全透明的*/
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+}
+/*当前的激活幻灯片（active）和即将切换至的下一张（next.left 或 prev.right）都是完全可见的。*/
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  transform: translate3d(0,0,0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+        width: 100%;
+        height: auto; /* 确保容器占满可见区域 */
+        position: relative;
+}
+.item:nth-child(1) {
+  background: white;
+}
+.item:nth-child(2) {
+  background: white;
+}
+.item:nth-child(3) {
+  background: white;
+}
+.caption {
+position: absolute;
+
+top: 64%;
+  right: 0;
+  padding: 25px;
+  padding-left: 25px;
+  left: 0;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+  font-size: 90px;
+  top: 38%;
+}
+.carousel-indicators li {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #FEE16F;
+  border-radius: 0;
+}
+.carousel-indicators .active {
+  background-color: #FEE16F;
+}
+/* 图片样式 */
+.img-fluid {
+  width: 100%; /* 图片宽度占满父容器 */
+  height: 100%; /* 图片高度占满父容器 */
+  object-fit: cover; /* 确保图片按比例裁剪并覆盖整个容器 */
+  display: block; /* 去除图片的默认间距 */
+}
+
+
+
+
+
+
+
+
 /* 导航栏样式   */
 .navbar {
       display: flex;
@@ -339,8 +460,11 @@ margin-bottom: 15px; /* 增加段落间距 */
     background-color: rgb(179, 222, 239);
     border-radius: 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px 20px 40px 40px; /* 增加内边距，让文字与背景保持距离 */
+    padding: 10px 15px; /* 调整内边距 */
     white-space: nowrap; /* 防止文字换行 */
+    font-size: 0.9rem; /* 调整字体大小 */
+    color: #333; /* 标签文字颜色 */
+    text-align: center;
 }
 .research-tag2{
     display: inline-block;
@@ -364,8 +488,174 @@ margin-bottom: 15px; /* 增加段落间距 */
 }
 /* Research
 ---------------------------------*/
-/* News---------------------------------*/
-/* News---------------------------------*/
+
+/* Members
+---------------------------------*/
+#members {
+    padding: 60px 10px;
+    background: url('../img/HOME2.jpg') no-repeat center center;
+    background-size: cover; /* 确保背景图片覆盖容器 */
+}
+
+.pi-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    /* 背景与边框 */
+    background: transparent; /* 添加渐变背景 */
+    padding: 20px; /* 增加内边距 */
+
+    /* 动画效果 */
+    transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
+}
+.pi-section:hover {
+
+    transform: scale(1.02); /* 悬停时的轻微放大效果 */
+}
+/* 子元素样式 */
+.pi-section > * {
+    background: #ffffff; /* 子元素背景色 */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.pi-section > *:hover {
+    transform: translateY(-5px); /* 子元素悬停时的上移效果 */
+
+}
+
+.pi-profile {
+    display: flex;
+    align-items:center;
+    background-color:transparent;
+    padding: 30px;
+    width: 65%;
+    height: auto;
+    gap: 30px;
+}
+/* 头像容器 */
+.profile-container {
+    position: relative; /* 确保子元素定位正确 */
+    display: flex;
+    flex-direction: column; /* 设置为纵向布局 */
+    align-items: center; /* 子元素水平居中 */
+    gap: 10px; /* 图片和标签之间的间距 */
+    flex-shrink: 0; /* 防止头像缩放 */
+    width: 200px; /* 固定头像宽度 */
+    height: 200px; /* 固定头像高度 */
+    border-radius: 50%; /* 容器为圆形 */
+    overflow: hidden; /* 确保图片裁剪为圆形 */
+    background: linear-gradient(135deg, #ffd700, #ff8c00); /* 圆形边框的渐变色 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right:30px
+}
+
+
+/* 圆形头像图片 */
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片完整填充容器 */
+    border-radius: 50%; /* 图片裁剪为圆形 */
+}
+
+
+.pi-info {
+    flex: 1; /* 文字内容占据剩余空间 */
+      color:white;
+}
+
+.pi-name {
+     font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:#FEE16F;
+}
+
+
+.experience-list {
+    list-style: none; /* 去掉默认列表样式 */
+    padding: 0;
+    margin: 0 0 15px 0;
+    color:white; /* 较浅的文字颜色 */
+    line-height:2; /* 增加行高，便于阅读 */
+     font-size: 1.5rem;
+}
+
+
+/* 邮箱和学术资料 */
+.pi-email p {
+  color:white;
+    margin: 5px 0;
+
+    font-size: 1.5rem;
+}
+
+.pi-email a {
+    color: #007bff; /* 链接为蓝色 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pi-email a:hover {
+    color: #0056b3; /* 悬停时更深的蓝色 */
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 768px) {
+    .pi-profile {
+        flex-direction: column; /* 小屏幕下头像与文字上下排列 */
+        align-items: center; /* 居中对齐 */
+        text-align: center; /* 文本居中 */
+        gap: 15px; /* 减少头像和文字间距 */
+    }
+
+    .profile-container {
+        width: 100px; /* 缩小头像大小 */
+        height: 100px;
+    }
+
+    .pi-name {
+        font-size: 1.25rem; /* 缩小名称字体 */
+    }
+
+    .experience-list {
+        font-size: 0.9rem; /* 缩小列表字体 */
+    }
+
+    .pi-email p {
+        font-size: 0.8rem; /* 缩小邮箱字体 */
+    }
+}
+
+@media (max-width: 480px) {
+    .pi-profile {
+        padding: 15px; /* 减少容器内边距 */
+    }
+
+    .profile-container {
+        width: 80px; /* 进一步缩小头像大小 */
+        height: 80px;
+    }
+
+    .pi-name {
+        font-size: 1rem; /* 缩小名称字体 */
+    }
+
+    .experience-list {
+        font-size: 0.8rem; /* 缩小列表字体 */
+    }
+
+    .pi-email a {
+        font-size: 0.75rem; /* 更小的链接字体 */
+    }
+}
+
+
 /* News---------------------------------*/
 #news {
     padding: 60px 0;
@@ -481,7 +771,7 @@ margin-bottom: 15px; /* 增加段落间距 */
 /* 中等屏幕 */
 @media (max-width: 1024px) {
     #portfolio_wrapper .portfolio-item {
-        width: 33.3333%; /* 三列布局 */
+        width: 33.3333% !important; /* 三列布局 */
     }
 
     #filters ul li a h5 {
@@ -492,7 +782,7 @@ margin-bottom: 15px; /* 增加段落间距 */
 /* 小屏幕 */
 @media (max-width: 768px) {
     #portfolio_wrapper .portfolio-item {
-        width: 50%; /* 两列布局 */
+        width: 50% !important; /* 两列布局 */
     }
 
     #filters ul li {
@@ -507,7 +797,7 @@ margin-bottom: 15px; /* 增加段落间距 */
 /* 超小屏幕 */
 @media (max-width: 576px) {
     #portfolio_wrapper .portfolio-item  {
-        width: 50%; /* 保持两列布局 */
+        width: 50% !important; /* 保持两列布局 */
     }
 
     #filters ul li {
@@ -941,106 +1231,17 @@ a, a:hover, a:active {
   justify-content: center;
 }
 
-/*carousel*/
-/* 响应式轮播图 */
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-  overflow: hidden;
-}
-@media (min-width: 768px) {
-  .carousel {
-    height: 600px;
-  }
-}
 
-@media (min-width: 1200px) {
-  .carousel {
-    height: 700px;
-  }
-}
-/*设置轮播图切换动画的属性为透明度*/
-.carousel-fade .carousel-inner .item {
-  transition-property: opacity;
-}
-/*默认状态下，所有幻灯片（包括即将离开的或进入的）都是完全透明的*/
-.carousel-fade .carousel-inner .item,
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-  opacity: 0;
-}
-/*当前的激活幻灯片（active）和即将切换至的下一张（next.left 或 prev.right）都是完全可见的。*/
-.carousel-fade .carousel-inner .active,
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-}
-.carousel-fade .carousel-inner .next,
-.carousel-fade .carousel-inner .prev,
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-  left: 0;
-  transform: translate3d(0,0,0);
-}
-.carousel-fade .carousel-control {
-  z-index: 2;
-}
-.carousel,
-.carousel-inner,
-.carousel-inner .item {
-
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    height: 700px;
-}
-.item:nth-child(1) {
-  background: white;
-}
-.item:nth-child(2) {
-  background: white;
-}
-.item:nth-child(3) {
-  background: white;
-}
-.caption {
-position: absolute;
-
-top: 64%;
-  right: 0;
-  padding: 25px;
-  padding-left: 25px;
-  left: 0;
-}
-.carousel-fade .carousel-control {
-  z-index: 2;
-  font-size: 90px;
-  top: 38%;
-}
-.carousel-indicators li {
-  background-color: rgba(0,0,0,0);
-  border: 1px solid #FEE16F;
-  border-radius: 0;
-}
-.carousel-indicators .active {
-  background-color: #FEE16F;
-}
 .caption h2{
 color:#FFE270;
 line-height:45px;
 font-size: 50px;
 }
 .caption strong {
-  font-size: 26px;
+  font-size: 3rem;
 }
-/* img-fluid 样式：图片宽度全屏，保持高度比例 */
-.img-fluid {
 
-  max-width: 100%; /* 确保图片宽度不会超过父元素 */
-  height: auto; /* 高度根据宽度自动调整，保持比例 */
-  display: block; /* 避免图片默认的内联样式（如间距） */
-}
+
 /* Common style */
 .grid figure {
 	position: relative;
@@ -1468,101 +1669,6 @@ div#main-nav {
   text-align: center;
 }
 
-/* Members
----------------------------------*/
-#members {
-    padding: 60px 0px;
-    /*background: url('../img/slide4.jpg') top left no-repeat !important;*/
-    background-color: black;
-}
-
-
-
-.pi-section{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.pi-profile {
-    display: flex;
-    align-items: flex-start;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    width: 900px;
-    height: 350px;
-}
-
-.pi-photo {
-    border-radius: 5px;
-    width: 200px;
-    height: 250px;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-.pi-info {
-    max-width: 600px;
-}
-
-.pi-name {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.experience-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.experience-list li {
-    margin-bottom: 5px;
-}
-.pi-email {
-    text-align: left;
-    margin-top: 40px;
-    padding: 0;
-    line-height: 1;
-}
-.pi-email h4, .pi-email p {
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1.6 !important;
-
-}
-.student-profile {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 900px;
-    height: 350px;
-}
-.student-name {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-.student-name h4 {
-    color: black;
-}
-.student-name h4, .student-name p {
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1.6 !important;
-
-}
 
 /* Latest Work
 ---------------------------------*/
