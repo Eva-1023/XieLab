@@ -86,28 +86,41 @@ img, table, video, iframe {
 ---------------------------------*/
 /* 响应式轮播图 */
 .carousel {
-  display: flex;
-  justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
-  height: 100vh; /* 高度设置为视口高度 */
-  overflow: hidden; /* 隐藏多余部分 */
   position: relative;
 }
 /* 轮播图的图片容器 */
 .carousel-inner {
-  width: 100%; /* 宽度占满父容器 */
-  height: 100%; /* 高度占满父容器 */
+    position: relative;
+    width: 100%; /* 宽度占满父容器 */
+    height: auto;
+    overflow: hidden;
+    object-fit: cover; /* 保持图片比例 */
+
 }
 /* 单个幻灯片的样式 */
-.carousel-inner .item {
+.carousel .item {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  display: none;
+}
+
+.carousel .item.active{
+    display: block;
+}
+.carousel-inner .item img {
+  width: 100%;
+    height: 100%;
+  display: block;
+  object-fit: cover; /* 裁剪图片使其覆盖整个容器 */
+}
+
+
+.carousel .item img{
+  width: 100%;
+
+  display: block;
+  object-fit: cover; /* 裁剪图片使其覆盖整个容器 */
 }
 
 
@@ -148,32 +161,20 @@ img, table, video, iframe {
 .carousel-fade .carousel-control {
   z-index: 2;
 }
-.carousel,
-.carousel-inner,
-.carousel-inner .item {
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-        width: 100%;
-        height: auto; /* 确保容器占满可见区域 */
-        position: relative;
-}
-.item:nth-child(1) {
-  background: white;
-}
-.item:nth-child(2) {
-  background: white;
-}
-.item:nth-child(3) {
-  background: white;
-}
-.caption {
-position: absolute;
 
-top: 64%;
-  right: 0;
-  padding: 25px;
-  padding-left: 25px;
-  left: 0;
+.item:nth-child(1),
+.item:nth-child(2),
+.item:nth-child(3) {
+  background: transparent;
+}
+
+.caption {
+    position: absolute;
+    top: 64%;
+    right: 0;
+    padding: 25px;
+    padding-left: 25px;
+    left: 0;
 }
 .carousel-fade .carousel-control {
   z-index: 2;
@@ -188,17 +189,15 @@ top: 64%;
 .carousel-indicators .active {
   background-color: #FEE16F;
 }
-/* 图片样式 */
-.img-fluid {
-  width: 100%; /* 图片宽度占满父容器 */
-  height: 100%; /* 图片高度占满父容器 */
-  object-fit: cover; /* 确保图片按比例裁剪并覆盖整个容器 */
-  display: block; /* 去除图片的默认间距 */
+.left.carousel-control span,
+.right.carousel-control span{
+    font-size: 2rem;
+    color: transparent;
 }
-
-
-
-
+.left.carousel-control ,
+.right.carousel-control {
+    background-image: none;
+}
 
 
 
@@ -503,11 +502,9 @@ margin-bottom: 15px; /* 增加段落间距 */
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 40px;
     /* 背景与边框 */
     background: transparent; /* 添加渐变背景 */
     padding: 20px; /* 增加内边距 */
-
     /* 动画效果 */
     transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
 }
@@ -530,9 +527,9 @@ margin-bottom: 15px; /* 增加段落间距 */
     align-items:center;
     background-color:transparent;
     padding: 30px;
-    width: 65%;
+    width: 75%;
     height: auto;
-    gap: 30px;
+    gap: 15px;
 }
 /* 头像容器 */
 .profile-container {
@@ -547,8 +544,6 @@ margin-bottom: 15px; /* 增加段落间距 */
     border-radius: 50%; /* 容器为圆形 */
     overflow: hidden; /* 确保图片裁剪为圆形 */
     background: linear-gradient(135deg, #ffd700, #ff8c00); /* 圆形边框的渐变色 */
-    display: flex;
-    align-items: center;
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-right:30px
@@ -570,12 +565,17 @@ margin-bottom: 15px; /* 增加段落间距 */
 }
 
 .pi-name {
-     font-size: 2rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
     color:#FEE16F;
 }
-
+.pi-pos {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color:#FEE16F;
+}
 
 .experience-list {
     list-style: none; /* 去掉默认列表样式 */
@@ -589,10 +589,10 @@ margin-bottom: 15px; /* 增加段落间距 */
 
 /* 邮箱和学术资料 */
 .pi-email p {
-  color:white;
+    color:white;
     margin: 5px 0;
-
     font-size: 1.5rem;
+
 }
 
 .pi-email a {
@@ -605,53 +605,112 @@ margin-bottom: 15px; /* 增加段落间距 */
     color: #0056b3; /* 悬停时更深的蓝色 */
 }
 
+.babe-section {
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 30px; /* 增加内边距 */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    /* 背景与边框 */
+    background: transparent; /* 添加渐变背景 */
+
+}
+
+
+.babe-profile {
+    padding-left: 30px;
+    flex-direction: column; /* 小屏幕下头像与文字上下排列 */
+    align-items: center;
+    text-align: center; /* 文本居中 */
+    display: flex;
+    background-color:transparent;
+    width: auto;
+    height: auto;
+    gap: 10px;
+}
+.babe-name h3{
+    font-size: 2rem;
+    font-weight: bold;
+    color:#FEE16F;
+    text-align: center;
+}
+/* 头像容器 */
+.babe-profile-container {
+    position: relative; /* 确保子元素定位正确 */
+    display: flex;
+    flex-direction: column; /* 设置为纵向布局 */
+    align-items: center; /* 子元素水平居中 */
+    gap: 10px; /* 图片和标签之间的间距 */
+    flex-shrink: 0; /* 防止头像缩放 */
+    width: 200px; /* 固定头像宽度 */
+    height: 200px; /* 固定头像高度 */
+    border-radius: 50%; /* 容器为圆形 */
+    overflow: hidden; /* 确保图片裁剪为圆形 */
+    background: linear-gradient(135deg, #ffd700, #ff8c00); /* 圆形边框的渐变色 */
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right:0;
+}
+
+
 /* ========== 响应式设计 ========== */
 @media (max-width: 768px) {
     .pi-profile {
+        padding: 5px;
         flex-direction: column; /* 小屏幕下头像与文字上下排列 */
         align-items: center; /* 居中对齐 */
         text-align: center; /* 文本居中 */
         gap: 15px; /* 减少头像和文字间距 */
+        width: 100%;
     }
 
     .profile-container {
         width: 100px; /* 缩小头像大小 */
         height: 100px;
+        margin-right:0;
     }
 
     .pi-name {
-        font-size: 1.25rem; /* 缩小名称字体 */
+
     }
 
     .experience-list {
-        font-size: 0.9rem; /* 缩小列表字体 */
+        line-height:1.4;
+        text-align: left ;
+
     }
 
     .pi-email p {
-        font-size: 0.8rem; /* 缩小邮箱字体 */
+    text-align: left;
     }
 }
 
 @media (max-width: 480px) {
     .pi-profile {
-        padding: 15px; /* 减少容器内边距 */
+        padding: 5px; /* 减少容器内边距 */
+        width: 100%;
     }
 
     .profile-container {
-        width: 80px; /* 进一步缩小头像大小 */
-        height: 80px;
+        width: 150px; /* 进一步缩小头像大小 */
+        height: 150px;
+        margin-right:0;
     }
 
     .pi-name {
-        font-size: 1rem; /* 缩小名称字体 */
+
     }
 
     .experience-list {
-        font-size: 0.8rem; /* 缩小列表字体 */
+        line-height:1.4;
+         text-align: left ;
+
     }
 
     .pi-email a {
-        font-size: 0.75rem; /* 更小的链接字体 */
+    text-align: left;
     }
 }
 
