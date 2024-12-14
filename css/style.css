@@ -793,7 +793,6 @@ margin-bottom: 15px; /* 增加段落间距 */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
     position: relative; /* 设置相对定位 */
-
 }
 #filters {
     margin-top: 10px;
@@ -896,8 +895,8 @@ margin-bottom: 15px; /* 增加段落间距 */
         padding: 8px 16px;
     }
     .figure.effect-oscar h2 {
-        margin: 20% 0 10px 0;
-        font-size:0.5rem; /* 确保字体大小一致 */
+        margin: 0;
+        font-size: 0.5rem; /* 确保字体大小一致 */
 }
 .figure.effect-oscar p {
     font-size: 0.8rem; /* 确保字体大小一致 */
@@ -915,7 +914,7 @@ margin-bottom: 15px; /* 增加段落间距 */
         padding: 6px 12px;
     }
         .figure.effect-oscar h2 {
-        margin: 20% 0 10px 0;
+        margin: 0;
         font-size:1.5rem; /* 确保字体大小一致 */
 }
 .figure.effect-oscar p {
@@ -1455,36 +1454,43 @@ font-size: 50px;
 
 /*---------------*/
 /***** Oscar *****/
-/*---------------*/
-
+/*设置背景渐变*/
 figure.effect-oscar {
 	/* background: -webkit-linear-gradient(45deg, #22682a 0%, #9b4a1b 40%, #3a342a 100%); */
 	background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
 }
-
+/*悬停时图片透明度的变化*/
 figure.effect-oscar img {
+    display: block;
 	opacity: 0.9;
+    width: 100%;
+    height: auto;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 }
-
+/*图片的文字说明部分*/
 figure.effect-oscar figcaption {
-	padding: 3em;
+	padding: 0;/*文字内容的内边距*/
 	background-color: transparent;
 	-webkit-transition: background-color 0.35s;
 	transition: background-color 0.35s;
+    position: absolute;
 }
-
+/*添加白色的边框，环绕在figcaption内部*/
 figure.effect-oscar figcaption::before {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	bottom: 30px;
-	left: 30px;
-	border: 1px solid #fff;
-	content: '';
+    position: absolute;
+    top: 10%; /* 设置框的中心点 */
+    left: 10%; /* 设置框的中心点 */
+    right: 10%; /* 固定框的宽度 */
+    bottom: 10%; /* 固定框的高度 */
+    border: 1px solid #fff; /* 白色边框 */
+    content: ''; /* 必须有内容才能显示伪元素 */
+    pointer-events: none; /* 禁用事件响应，防止干扰其他交互 */
+    z-index: 1;
 }
 
+
+/*默认情况下的标题和文字都是不可见的*/
 figure.effect-oscar h2 {
 	margin: 20% 0 10px 0;
 	-webkit-transition: -webkit-transform 0.35s;
@@ -1509,13 +1515,13 @@ figure.effect-oscar p {
 	-webkit-transform: scale(0);
 	transform: scale(0);
 }
-
+/*h2（标题）平滑移动到初始位置（translate3d(0, 0, 0)），文字变为白色*/
 figure.effect-oscar:hover h2 {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 	color: #FFFFFF;
 }
-
+/*p（段落）逐渐显现（opacity: 0.8），并且缩放至正常大小（scale(1)）*/
 figure.effect-oscar:hover figcaption::before,
 figure.effect-oscar:hover p {
 	opacity: 0.8;
