@@ -27,5 +27,5 @@ function showYear(year) {
 
 // 默认显示 2024 年
 window.onload = function () {
-    showYear('2024');
+    showYear('all');
 };
