@@ -109,7 +109,6 @@ img, table, video, iframe {
   position: relative;
   display: none;
 }
-
 .carousel .item.active{
     display: block;
 }
@@ -119,22 +118,17 @@ img, table, video, iframe {
   display: block;
   object-fit: cover; /* 裁剪图片使其覆盖整个容器 */
 }
-
-
 .carousel .item img{
   width: 100%;
 
   display: block;
   object-fit: cover; /* 裁剪图片使其覆盖整个容器 */
 }
-
-
 @media (min-width: 768px) {
   .carousel {
     height:auto;
   }
 }
-
 @media (min-width: 1200px) {
   .carousel {
     height:auto;
@@ -368,7 +362,6 @@ img, table, video, iframe {
     }
 }
 /* 导航栏样式   */
-
 /* Research
 ---------------------------------*/
 #research {
@@ -509,7 +502,6 @@ margin-bottom: 15px; /* 增加段落间距 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 5px 10px; /* 增加内边距，让文字与背景保持距离 */
     white-space: nowrap; /* 防止文字换行 */
-
 }
 /* Research
 ---------------------------------*/
@@ -521,7 +513,6 @@ margin-bottom: 15px; /* 增加段落间距 */
     background: url('../img/HOME2.jpg') no-repeat center center;
     background-size: cover; /* 确保背景图片覆盖容器 */
 }
-
 .pi-section {
     display: flex;
     align-items: flex-start;
@@ -535,7 +526,6 @@ margin-bottom: 15px; /* 增加段落间距 */
     transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
 }
 .pi-section:hover {
-
     transform: scale(1.02); /* 悬停时的轻微放大效果 */
 }
 /* 子元素样式 */
@@ -545,9 +535,7 @@ margin-bottom: 15px; /* 增加段落间距 */
 }
 .pi-section > *:hover {
     transform: translateY(-5px); /* 子元素悬停时的上移效果 */
-
 }
-
 .pi-profile {
     display: flex;
     align-items:flex-start;
@@ -583,8 +571,6 @@ margin-bottom: 15px; /* 增加段落间距 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-right:30px
 }
-
-
 /* 圆形头像图片 */
 .profile-photo {
     width: 100%;
@@ -592,13 +578,10 @@ margin-bottom: 15px; /* 增加段落间距 */
     object-fit: cover; /* 确保图片完整填充容器 */
     border-radius: 50%; /* 图片裁剪为圆形 */
 }
-
-
 .pi-info {
     flex: 1; /* 文字内容占据剩余空间 */
       color:white;
 }
-
 .pi-name {
     font-size: 2rem;
     font-weight: bold;
@@ -611,7 +594,6 @@ margin-bottom: 15px; /* 增加段落间距 */
     margin-bottom: 10px;
     color:#FEE16F;
 }
-
 .experience-list {
     list-style: none; /* 去掉默认列表样式 */
     padding: 0;
@@ -620,8 +602,6 @@ margin-bottom: 15px; /* 增加段落间距 */
     line-height:2; /* 增加行高，便于阅读 */
     font-size: 1.5rem;
 }
-
-
 /* 邮箱和学术资料 */
 .pi-email p {
     color:white;
@@ -629,17 +609,14 @@ margin-bottom: 15px; /* 增加段落间距 */
     font-size: 1.5rem;
 
 }
-
 .pi-email a {
     color: #007bff; /* 链接为蓝色 */
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .pi-email a:hover {
     color: #0056b3; /* 悬停时更深的蓝色 */
 }
-
 .babe-section {
     gap: 20px;
     flex-wrap: wrap;
@@ -802,10 +779,16 @@ margin-bottom: 15px; /* 增加段落间距 */
         text-align: center;
     }
 }
-
 /* News---------------------------------*/
 #news {
     padding: 30px 0;
+}
+.news-text{
+    display: flex; /* 启用 Flexbox 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    position: relative; /* 设置相对定位 */
+
 }
 #filters {
     margin-top: 10px;
@@ -907,6 +890,13 @@ margin-bottom: 15px; /* 增加段落间距 */
     #filters ul li a h5 {
         padding: 8px 16px;
     }
+    .figure.effect-oscar h2 {
+        margin: 20% 0 10px 0;
+        font-size:0.5rem; /* 确保字体大小一致 */
+}
+.figure.effect-oscar p {
+    font-size: 0.8rem; /* 确保字体大小一致 */
+}
 }
 /* 小屏幕 */
 @media (max-width: 768px) {
@@ -919,6 +909,13 @@ margin-bottom: 15px; /* 增加段落间距 */
     #filters ul li a h5 {
         padding: 6px 12px;
     }
+        .figure.effect-oscar h2 {
+        margin: 20% 0 10px 0;
+        font-size:1.5rem; /* 确保字体大小一致 */
+}
+.figure.effect-oscar p {
+    font-size: 0.8rem; /* 确保字体大小一致 */
+}
 }
 /* 超小屏幕 */
 @media (max-width: 576px) {
@@ -931,6 +928,13 @@ margin-bottom: 15px; /* 增加段落间距 */
     #filters ul li a h5 {
         padding: 5px 10px;
     }
+        .figure.effect-oscar h2 {
+        margin: 20% 0 10px 0;
+        font-size:1.5rem; /* 确保字体大小一致 */
+}
+.figure.effect-oscar p {
+    font-size: 0.8rem; /* 确保字体大小一致 */
+}
 }
 /* Resource
 ---------------------------------*/
@@ -1395,7 +1399,7 @@ font-size: 50px;
 }
 
 .grid figure figcaption {
-	padding: 2em;
+	padding: 1em;
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 1.25em;
@@ -1486,7 +1490,10 @@ figure.effect-oscar h2 {
     font-smooth: always; /* 优化字体平滑 */
     font-family: "Roboto", "Arial", sans-serif; /* 替换为一致的字体 */
 	color: transparent;
-    font-size: 24px; /* 确保字体大小一致 */
+    font-size:2rem; /* 确保字体大小一致 */
+}
+figure.effect-oscar p {
+    font-size: 1.8rem; /* 确保字体大小一致 */
 }
 
 figure.effect-oscar figcaption::before,
