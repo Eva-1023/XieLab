@@ -224,6 +224,15 @@ img, table, video, iframe {
     background-color: transparent;
     border-color: transparent;
 }
+.navbar-header{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 ;
+}
+.navbar-toggle{
+    margin: 0 !important;
+}
 .navbar ul {
     display: flex;
     flex-wrap: wrap;
@@ -320,17 +329,20 @@ img, table, video, iframe {
 /* 小屏幕样式调整 */
 @media (max-width: 768px) {
     .navbar {
-        padding: 5px 10px; /* 减少内边距 */
-         align-items: flex-start; /* 向左对齐导航项 */
+        padding: 5px 5px; /* 减少内边距 */
+         align-items: center ;
     }
     .navbar ul {
         flex-wrap: nowrap; /* 不换行 */
         overflow-x: auto; /* 允许横向滚动 */
         white-space: nowrap; /* 保持导航项单行显示 */
-         align-items: flex-start;
+         align-items: flex-start !important;
         text-align: left;
+        justify-content: flex-start; /* 修改为左对齐 */
     }
-
+ .navbar-nav {
+        justify-content: flex-start; /* 修改为左对齐 */
+    }
   .navbar-nav > li > a {
     padding: 10px 15px; /* 小屏幕下增加点击区域 */
     font-size: 1.5rem; /* 调整字体大小 */
