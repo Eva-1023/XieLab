@@ -269,6 +269,7 @@ img, table, video, iframe {
 	/*margin:0px;*/;
 }
 .navStyle ul li:last-child {
+    order: 1; /* 'Home' 设置为优先显示 */
     margin: 0 0 0 23px;
 }
 .navStyle ul li a {
@@ -321,13 +322,27 @@ img, table, video, iframe {
 @media (max-width: 768px) {
     .navbar {
         padding: 5px 10px; /* 减少内边距 */
+         align-items: flex-start; /* 向左对齐导航项 */
     }
     .navbar ul {
         flex-wrap: nowrap; /* 不换行 */
         overflow-x: auto; /* 允许横向滚动 */
         white-space: nowrap; /* 保持导航项单行显示 */
+        text-align: left;
     }
+  .navbar-nav > li {
+    order: 2; /* 默认顺序为 2 */
+  }
 
+  .navStyle ul li:last-child {
+    order: 1; /* 'Home' 设置为优先显示 */
+
+}
+
+  .navbar-nav > li > a {
+    padding: 10px 15px; /* 小屏幕下增加点击区域 */
+    font-size: 1.5rem; /* 调整字体大小 */
+  }
     .navbar ul.active {
         display: flex; /* 显示导航项 */
     }
@@ -695,14 +710,21 @@ margin-bottom: 15px; /* 增加段落间距 */
 /* ========== 响应式设计 ========== */
 @media (max-width: 768px) {
     .babe-row-profile {
-    padding: 0;
     gap: 5px;
+    align-items:center;
+    width: 100%;
+        justify-content: center; /* 垂直居中 */
+
 }
+        .babe-name h3  {
+        font-size: 1.2rem;
+        text-align: center;
+    }
     .babe-section {
         margin-top: 20px;
         gap: 0;
-        padding: 0; /* 增加内边距 */
-        width: 100%;
+        padding: 0 !important;
+        width: 100% !important;
 }
     .pi-profile {
         padding: 5px;
@@ -731,20 +753,21 @@ margin-bottom: 15px; /* 增加段落间距 */
     .pi-email p {
     text-align: left;
     }
-    .divider-with-text {
-    width: 90%;
-    }
+
 }
 @media (max-width: 480px) {
     .babe-row-profile {
     padding: 0;
     gap: 15px;
+    align-items:center;
+    width: 100%;
+ justify-content: center; /* 垂直居中 */
 }
     .babe-section {
         margin-top: 20px;
         gap: 0;
-        padding: 0; /* 增加内边距 */
-        width: 100%;
+        padding: 0 !important; /* 增加内边距 */
+        width: 100% !important;
 }
     .pi-profile {
         padding: 5px; /* 减少容器内边距 */
@@ -768,8 +791,9 @@ margin-bottom: 15px; /* 增加段落间距 */
     .pi-email a {
     text-align: left;
     }
-    .divider-with-text {
-    width: 90%;
+    .babe-name h3   {
+        font-size: 1.2rem;
+        text-align: center;
     }
 }
 
@@ -1605,7 +1629,6 @@ p {
   text-align: center;
 }
 #head {
-  background: #f4f4f4 url(../img/bg_head.jpg) top center;
   background-size: cover;
   color: #7C7C7C;
   padding: 120px 0;
@@ -1653,73 +1676,6 @@ p {
 
 /* Top_content
 ---------------------------------*/
-
-.top_cont_outer {
-    background: #ED5441;
-    position: relative; 
-    background: url('../img/main2.jpg') no-repeat;
-	background-size: cover; 
-}
-
-.hero_section {
-    position: relative;
-    padding-top: 72px;
-}
-.hero_wrapper {
-background: rgba(10, 21, 37, 0.69);
-height: 650px;
-}
-.white_pad {
-    position: relative;
-    right: 0px;
-    bottom: 0px;
-}
-
-.white_pad img {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-}
-
-.top_left_cont {
-    padding: 15px 0;
-}
-
-.top_left_cont h3 {
-    font-size: 16px;
-    color: #f56eab;
-    margin: 0 0 20px 0;
-    text-align: left;
-    font-weight: 700;
-}
-
-.top_left_cont h2 {
-    font-size: 36px;
-    color: #FFF;
-    line-height: 58px;
-    margin: 0 0 26px 0;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    text-transform: capitalize;
-}
-
-.top_left_cont h2 strong {
-    font-weight: 400;
-	
-    color: #FFFFFF;
-    font-size: 28px;
-    text-transform: capitalize;
-}
-
-.top_left_cont p {
-font-size: 18px;
-color: #FFFFFF;
-margin: 0 0 30px 0;
-line-height: 33px;
-text-align: center;
-font-weight: normal;
-letter-spacing: 1px;
-}
 
 a.read_more, a.read_more2 {
     font-family: 'Raleway', sans-serif;
@@ -1769,11 +1725,6 @@ div#main-nav {
     padding: 0px;
 }
 
-.service-list {
-    padding: 0 0 0 0;
-    font-size: 14px;
-    margin-bottom: 40px;
-}
 
 .service-list-col1 {
     float: left;
@@ -2140,22 +2091,6 @@ text-align: center;
     transition: opacity .1s .2s;
 }
 
-.zoom-icon {
-    left: 50%;
-    margin-left: -20px;
-    position: inherit;
-    width: 40px;
-    height: 40px;
-    margin-top: 40px;
-    opacity: 0;
-    background: url(images/zoom.png);
-    background-size: 40px 40px;
-    transition: all 0.3s ease 0.1s;
-    -moz-transition: all 0.3s ease 0.2s;
-    -webkit-transition: all 0.3s ease 0.2s;
-    -ms-transition: all 0.3s ease 0.2s;
-    -o-transition: all 0.3s ease 0.2s;
-}
 
 .portfolio-item:hover .zoom-icon {
     opacity: 1;
@@ -2362,7 +2297,6 @@ div.mc-image {
 }
 
 .in-slide-content div.info-slide {
-    background: #FFF url(images/info.png) no-repeat left bottom;
     background-size: 46px 46px;
     position: absolute;
     top: 30px;
