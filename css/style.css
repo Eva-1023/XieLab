@@ -269,7 +269,6 @@ img, table, video, iframe {
 	/*margin:0px;*/;
 }
 .navStyle ul li:last-child {
-    order: 1; /* 'Home' 设置为优先显示 */
     margin: 0 0 0 23px;
 }
 .navStyle ul li a {
@@ -328,20 +327,14 @@ img, table, video, iframe {
         flex-wrap: nowrap; /* 不换行 */
         overflow-x: auto; /* 允许横向滚动 */
         white-space: nowrap; /* 保持导航项单行显示 */
+         align-items: flex-start;
         text-align: left;
     }
-  .navbar-nav > li {
-    order: 2; /* 默认顺序为 2 */
-  }
-
-  .navStyle ul li:last-child {
-    order: 1; /* 'Home' 设置为优先显示 */
-
-}
 
   .navbar-nav > li > a {
     padding: 10px 15px; /* 小屏幕下增加点击区域 */
     font-size: 1.5rem; /* 调整字体大小 */
+      text-align: left; /* 左对齐文字 */
   }
     .navbar ul.active {
         display: flex; /* 显示导航项 */
@@ -352,8 +345,9 @@ img, table, video, iframe {
     }
 
     .navbar ul li a {
-        font-size: 14px;
+        font-size: 1.5rem;
     }
+
 }
 /* 大屏幕隐藏汉堡菜单 */
 @media (min-width: 769px) {
