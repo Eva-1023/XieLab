@@ -85,8 +85,6 @@ img, table, video, iframe {
     display: flex;
     justify-content: flex-end; /* Aligns the whole row to the right */
   }
-
-
 /* HOME
 ---------------------------------*/
 /* 响应式轮播图 */
@@ -160,13 +158,11 @@ img, table, video, iframe {
 .carousel-fade .carousel-control {
   z-index: 2;
 }
-
 .item:nth-child(1),
 .item:nth-child(2),
 .item:nth-child(3) {
   background: transparent;
 }
-
 .caption {
     position: absolute;
     top: 64%;
@@ -197,10 +193,6 @@ img, table, video, iframe {
 .right.carousel-control {
     background-image: none;
 }
-
-
-
-
 /* 导航栏样式   */
 .navbar {
     margin-bottom: 0 !important;
@@ -418,6 +410,7 @@ img, table, video, iframe {
   color: #333; /* 文本颜色 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
   margin-bottom: 20px; /* 标题与段落之间的间距 */
+    font-weight: bold;
 }
 /* 段落样式 */
 .text-content p {
@@ -480,7 +473,7 @@ margin-bottom: 15px; /* 增加段落间距 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 15px; /* 调整内边距 */
     white-space: nowrap; /* 防止文字换行 */
-    font-size: 0.9rem; /* 调整字体大小 */
+    font-size: 1.2rem; /* 调整字体大小 */
     color: #333; /* 标签文字颜色 */
     text-align: center;
 }
@@ -793,6 +786,8 @@ margin-bottom: 15px; /* 增加段落间距 */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
     position: relative; /* 设置相对定位 */
+    height: 100%;
+    width:100%;
 }
 #filters {
     margin-top: 10px;
@@ -894,13 +889,14 @@ margin-bottom: 15px; /* 增加段落间距 */
     #filters ul li a h5 {
         padding: 8px 16px;
     }
-    .figure.effect-oscar h2 {
+    figure.effect-oscar h2 {
         margin: 0;
-        font-size: 0.5rem; /* 确保字体大小一致 */
-}
-.figure.effect-oscar p {
-    font-size: 0.8rem; /* 确保字体大小一致 */
-}
+        font-size: 1.8rem !important; /* 调整为更小的字体大小 */
+    }
+    figure.effect-oscar p {
+        font-size: 1.2rem !important; /* 调整为更小的字体大小 */
+    }
+
 }
 /* 小屏幕 */
 @media (max-width: 768px) {
@@ -913,13 +909,13 @@ margin-bottom: 15px; /* 增加段落间距 */
     #filters ul li a h5 {
         padding: 6px 12px;
     }
-        .figure.effect-oscar h2 {
+  figure.effect-oscar h2 {
         margin: 0;
-        font-size:1.5rem; /* 确保字体大小一致 */
-}
-.figure.effect-oscar p {
-    font-size: 0.8rem; /* 确保字体大小一致 */
-}
+        font-size: 1.8rem !important; /* 调整为更小的字体大小 */
+    }
+    figure.effect-oscar p {
+        font-size: 1.2rem !important; /* 调整为更小的字体大小 */
+    }
 }
 /* 超小屏幕 */
 @media (max-width: 576px) {
@@ -932,13 +928,13 @@ margin-bottom: 15px; /* 增加段落间距 */
     #filters ul li a h5 {
         padding: 5px 10px;
     }
-        .figure.effect-oscar h2 {
-        margin: 20% 0 10px 0;
-        font-size:1.5rem; /* 确保字体大小一致 */
-}
-.figure.effect-oscar p {
-    font-size: 0.8rem; /* 确保字体大小一致 */
-}
+ figure.effect-oscar h2 {
+        margin: 0;
+        font-size: 1.8rem !important; /* 调整为更小的字体大小 */
+    }
+    figure.effect-oscar p {
+        font-size: 1.2rem !important; /* 调整为更小的字体大小 */
+    }
 }
 /* Resource
 ---------------------------------*/
@@ -1222,7 +1218,6 @@ font-size: 1em;
   padding: 30px 10px;
    background: #000000;
 }
-
 .contact-container {
     width: 80%;
     display: flex;
@@ -1323,17 +1318,6 @@ font-size: 1em;
 ---------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Reset
 ---------------------------------*/
 ul {
@@ -1363,8 +1347,6 @@ a, a:hover, a:active {
     width: 0;
     height: 0;
 }
-
-
 /* 响应式网格布局 */
 .grid {
   display: flex;
@@ -1423,7 +1405,6 @@ font-size: 50px;
 	left: 0;
 	height: 100%;
 }
-
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
 .grid figure figcaption > a {
@@ -1433,16 +1414,13 @@ font-size: 50px;
 	font-size: 0;
 	opacity: 0;
 }
-
 .grid figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
-
 .grid figure h2 span {
 	font-weight: 800;
 }
-
 .grid figure h2,
 .grid figure p {
 	margin: 0;
@@ -1456,6 +1434,7 @@ font-size: 50px;
 /***** Oscar *****/
 /*设置背景渐变*/
 figure.effect-oscar {
+    position: relative;
 	/* background: -webkit-linear-gradient(45deg, #22682a 0%, #9b4a1b 40%, #3a342a 100%); */
 	background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
 }
@@ -1470,29 +1449,42 @@ figure.effect-oscar img {
 }
 /*图片的文字说明部分*/
 figure.effect-oscar figcaption {
-	padding: 0;/*文字内容的内边距*/
+    top: 0;
+    left: 0;
 	background-color: transparent;
 	-webkit-transition: background-color 0.35s;
 	transition: background-color 0.35s;
     position: absolute;
+    width: 100%; /* 覆盖整个图片 */
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /*new*/
+    text-align: center;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 20px; /* 内边距，防止文本贴近边框 */
+    overflow: hidden; /* 防止溢出 */
+    word-wrap: break-word; /* 自动换行 */
 }
 /*添加白色的边框，环绕在figcaption内部*/
 figure.effect-oscar figcaption::before {
-    position: absolute;
-    top: 10%; /* 设置框的中心点 */
-    left: 10%; /* 设置框的中心点 */
-    right: 10%; /* 固定框的宽度 */
-    bottom: 10%; /* 固定框的高度 */
+   position: absolute;
+    top: 0; /* 白框与父元素的距离 */
+    left: 0;
+    width: 100%; /* 白框宽度 */
+    height: 100%; /* 白框高度 */
     border: 1px solid #fff; /* 白色边框 */
-    content: ''; /* 必须有内容才能显示伪元素 */
-    pointer-events: none; /* 禁用事件响应，防止干扰其他交互 */
-    z-index: 1;
+    content: ''; /* 必须有内容 */
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: -1; /* 将白框放在文字后面 */
 }
 
 
 /*默认情况下的标题和文字都是不可见的*/
 figure.effect-oscar h2 {
-	margin: 20% 0 10px 0;
+	margin: 5%;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0,100%,0);
@@ -1502,6 +1494,8 @@ figure.effect-oscar h2 {
     font-family: "Roboto", "Arial", sans-serif; /* 替换为一致的字体 */
 	color: transparent;
     font-size:2rem; /* 确保字体大小一致 */
+    z-index: 1;
+
 }
 figure.effect-oscar p {
     font-size: 1.8rem; /* 确保字体大小一致 */
@@ -1577,7 +1571,6 @@ table th, table td {
   }
 }
 
-
 h2 {
     font-size: 38px;
     color: #222222;
@@ -1595,7 +1588,6 @@ h3 {
     font-size: 18px;
     margin: 0 0 5px 0;
 }
-
 
 p {
     line-height: 24px;
@@ -1871,9 +1863,7 @@ background-position-y: 70px;
 	padding-left:0px;
 }
 
- .img-circle {
-border-radius: 50%;
-}
+
 .centered {
 text-align: center;
 /* background: #0A1525; */
@@ -2020,12 +2010,6 @@ text-align: center;
     -webkit-animation-delay: 1.2s;
 }
 
-
-/*new_profolio*/
-
-
-
-	
 /* Portfolio */	
 
 .container.news_title {
@@ -2165,11 +2149,7 @@ text-align: center;
 
 
 
-/* Portfolio Expander */	
-
-
-
-
+/* Portfolio Expander */
 #project-page-button-fullscreen {
     height: auto;
     z-index: 100;
@@ -2692,9 +2672,9 @@ width: 99%;
 display:none;
 }
 }
-        .joinImgIocn img {
-            margin: 0 5px; /* 图片之间的间距 */
-        }
+.joinImgIocn img {
+    margin: 0 5px; /* 图片之间的间距 */
+}
 
 
 
