@@ -506,6 +506,73 @@ margin-bottom: 15px; /* 增加段落间距 */
     background: url('../img/HOME2.jpg') no-repeat center center;
     background-size: cover; /* 确保背景图片覆盖容器 */
 }
+
+.team-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    flex-wrap: wrap;
+    /* 背景与边框 */
+    background: transparent; /* 添加渐变背景 */
+    padding: 0px; /* 增加内边距 */
+    /* 动画效果 */
+    transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
+}
+ .team-profile {
+        display: flex;
+        align-items:flex-start;
+        padding: 5px;
+        flex-direction: column; /* 小屏幕下头像与文字上下排列 */
+        align-items: center; /* 居中对齐 */
+        text-align: center; /* 文本居中 */
+        gap: 15px; /* 减少头像和文字间距 */
+        width: 100%;
+        height: auto;
+        background-color:transparent;
+    }
+
+.team-info {
+     color:white;
+}
+.team-row-profile {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color:transparent;
+    padding: 10px;
+    width: 90%;
+    height: auto;
+    gap: 5px;
+}
+.team-experience-list {
+    list-style: none; /* 去掉默认列表样式 */
+    padding: 0;
+    margin: 0 0 0px 0;
+    color:white; /* 较浅的文字颜色 */
+    line-height:2; /* 增加行高，便于阅读 */
+    font-size: 1.5rem;
+    text-align: left !important; /* 强制左对齐 */
+}
+/* 邮箱和学术资料 */
+.team-email p {
+    color:white;
+    margin: 5px 0;
+    font-size: 1.5rem;
+    text-align: left !important; /* 强制左对齐 */
+
+}
+.team-email a {
+    color: #007bff; /* 链接为蓝色 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.team-email a:hover {
+    color: #0056b3; /* 悬停时更深的蓝色 */
+}
+
+
+
 .pi-section {
     display: flex;
     align-items: flex-start;
@@ -540,10 +607,11 @@ margin-bottom: 15px; /* 增加段落间距 */
 }
 .babe-row-profile {
     display: flex;
-    align-items:flex-start;
+    align-items:center;
+    justify-content: center; /* 水平居中 */
     background-color:transparent;
     padding: 30px;
-    width: 75%;
+    width: 80%;
     height: auto;
     gap: 35px;
 }
@@ -562,7 +630,7 @@ margin-bottom: 15px; /* 增加段落间距 */
     background: linear-gradient(135deg, #ffd700, #ff8c00); /* 圆形边框的渐变色 */
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-right:30px
+    margin-right:10px
 }
 /* 圆形头像图片 */
 .profile-photo {
@@ -936,6 +1004,36 @@ margin-bottom: 15px; /* 增加段落间距 */
         font-size: 1.2rem !important; /* 调整为更小的字体大小 */
     }
 }
+
+
+  /* 自定义箭头样式 */
+  .custom-arrow {
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5); /* 浅色背景，半透明 */
+    border: none;
+    font-size: 24px;
+    color: #333; /* 浅灰色箭头 */
+    width: 40px;
+    height: 40px;
+    z-index: 100; /* 确保箭头位于图片上方 */
+    cursor: pointer;
+    border-radius: 50%; /* 圆形按钮 */
+  }
+
+  .custom-arrow:hover {
+    background: rgba(255, 255, 255, 0.8); /* 鼠标悬停时更亮 */
+  }
+
+  .slick-prev {
+    left: -50px; /* 左箭头的位置 */
+  }
+
+  .slick-next {
+    right: -50px; /* 右箭头的位置 */
+  }
+
 /* Resource
 ---------------------------------*/
 .col-md-3 {
@@ -2210,7 +2308,10 @@ text-align: center;
 	
 /* Portfolio*/	
 	
-	
+.portfolio-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
 
 /* Portfolio Normal Expander */		
 	
