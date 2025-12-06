@@ -516,15 +516,21 @@ margin-bottom: 15px; /* 增加段落间距 */
     background-size: cover; /* 确保背景图片覆盖容器 */
 }
 
+
+
+
+
+
+
 .pi-section {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     flex-wrap: wrap;
     /* 背景与边框 */
     background: transparent; /* 添加渐变背景 */
-    padding: 20px; /* 增加内边距 */
+    padding: 50px; /* 增加内边距 */
     /* 动画效果 */
     transition: all 0.3s ease-in-out; /* 平滑过渡效果 */
 }
@@ -541,6 +547,7 @@ margin-bottom: 15px; /* 增加段落间距 */
     transform: translateY(-5px); /* 子元素悬停时的上移效果 */
 
 }
+
 
 .pi-profile {
     display: flex;
@@ -575,7 +582,7 @@ margin-bottom: 15px; /* 增加段落间距 */
     background: linear-gradient(135deg, #ffd700, #ff8c00); /* 圆形边框的渐变色 */
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-right:30px
+    margin-right:10px;
 }
 
 
@@ -796,6 +803,9 @@ margin-bottom: 15px; /* 增加段落间距 */
         text-align: center;
     }
 }
+
+
+
 
 /* News---------------------------------*/
 #news {
