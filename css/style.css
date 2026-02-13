@@ -609,7 +609,7 @@ margin-bottom: 15px; /* 增加段落间距 */
 .babe-row-profile {
     display: flex;
     align-items:center;
-    justify-content: flex-start; /* 水平居中 */
+    justify-content: center; /* 水平居中 */
     background-color:transparent;
     padding: 30px;
     width: 80%;
