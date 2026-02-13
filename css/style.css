@@ -513,6 +513,7 @@ margin-bottom: 15px; /* 增加段落间距 */
     justify-content: center;
     gap: 0px;
     flex-wrap: wrap;
+    width: 33%;
     /* 背景与边框 */
     background: transparent; /* 添加渐变背景 */
     padding: 0px; /* 增加内边距 */
@@ -538,7 +539,7 @@ margin-bottom: 15px; /* 增加段落间距 */
 .team-row-profile {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items:flex-start;
     background-color:transparent;
     padding: 10px;
     width: 90%;
@@ -608,7 +609,7 @@ margin-bottom: 15px; /* 增加段落间距 */
 .babe-row-profile {
     display: flex;
     align-items:center;
-    justify-content: center; /* 水平居中 */
+    justify-content: flex-start; /* 水平居中 */
     background-color:transparent;
     padding: 30px;
     width: 80%;
